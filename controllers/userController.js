@@ -1,4 +1,4 @@
-const { User, Application } = require('../models');
+const { User, Application: Thought } = require('../models');
 
 module.exports = {
   // Get all users
@@ -24,15 +24,25 @@ module.exports = {
       .then((user) => res.json(user))
       .catch((err) => res.status(500).json(err));
   },
-  // Delete a user and associated apps
+
+  //update user - add code below
+
+
+  // Delete a user and associated thoughts
   deleteUser(req, res) {
     User.findOneAndDelete({ _id: req.params.userId })
       .then((user) =>
         !user
           ? res.status(404).json({ message: 'No user with that ID' })
-          : Application.deleteMany({ _id: { $in: user.applications } })
+          : Thought.deleteMany({ _id: { $in: user.thoughts } })
       )
-      .then(() => res.json({ message: 'User and associated apps deleted!' }))
+      .then(() => res.json({ message: 'User and thoughts deleted!' }))
       .catch((err) => res.status(500).json(err));
   },
 };
+
+//add friend/ post new friend to a users friend list
+
+
+//delete a friend from user using userID
+
