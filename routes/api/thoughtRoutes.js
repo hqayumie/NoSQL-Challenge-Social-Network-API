@@ -2,7 +2,7 @@ const router = require('express').Router();
 // Importing functions from thought controller
 const { 
     getAllThoughts, 
-    getThoughtById, 
+    getSingleThought, 
     createThought, 
     updateThought,
     addReaction,
