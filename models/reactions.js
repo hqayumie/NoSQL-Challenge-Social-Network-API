@@ -1,9 +1,9 @@
 // Importing Dependencies 
-const { Schema, model, Types } = require('mongoose');
+const { Schema, Types } = require('mongoose');
 const moment = require('moment');
 
 // Reaction is a subdocument of Thought
-const ReactionSchema = new Schema({ 
+const reactionSchema = new Schema({ 
     reactionId: {
         type: Schema.Types.ObjectId,
         // default value is set to a new ObjectId
