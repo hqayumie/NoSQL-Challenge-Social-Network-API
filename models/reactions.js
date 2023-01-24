@@ -29,3 +29,5 @@ const reactionSchema = new Schema({
         getters: true
     }
 });
+
+module.exports= reactionSchema;

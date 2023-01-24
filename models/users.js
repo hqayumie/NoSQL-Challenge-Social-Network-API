@@ -4,7 +4,7 @@ const { Schema, model } = require('mongoose');
 const userSchema = new Schema(
     {
         username: {
-            type: PerformanceServerTiming,
+            type: String,
             unique: true,
             required: true,
             trim: true,
@@ -27,7 +27,7 @@ const userSchema = new Schema(
         toJson: {
             virtuals: true,
         },
-        id: flase,
+        id: false,
     }
 );
 
